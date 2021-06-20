@@ -25,7 +25,7 @@
       </div>
 
       <!-- Hero Image -->
-      <nuxt-img class="w-3/5 border-2 border-black hidden md:block" src="/hero-image.jpg" alt="Hero Image" />
+      <img class="w-3/5 border-2 border-black hidden md:block" src="../static/hero-image.jpg" alt="Hero Image" />
       
     </div>
 
