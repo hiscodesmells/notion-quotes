@@ -1,8 +1,8 @@
 <template>
-    <div :class="`p-4 min-h-screen flex flex-col items-center justify-center bg-${bgColor()}`">
+    <div :class="`p-4 min-h-screen flex flex-col items-center justify-center bg-${bgColor}`">
         <div v-if="this.$store.state.quote">
-            <div :class="`text-${textSize()} text-${textColor()}`">{{ this.$store.state.quote }}</div>
-            <div :class="`pl-2 pt-2 text-${textSize()} text-${textColor()} font-bold`">- {{ this.$store.state.author }}</div>
+            <div :class="`text-${textSize} text-${textColor}`">{{ this.$store.state.quote }}</div>
+            <div :class="`pl-2 pt-2 text-${textSize} text-${textColor} font-bold`">- {{ this.$store.state.author }}</div>
         </div>
         <div v-else>Loading...</div>
     </div>
@@ -12,33 +12,26 @@
 import Vue from "vue"
 
 export default Vue.extend({
-    data() {
-        return {
-            theme: this.$route.query.theme,
-            fontSize: this.$route.query.fontSize,
-            quoteType: this.$route.query.quoteType
-        }
-    },
     async fetch() {
-        await this.$store.dispatch('fetchQuote', this.quoteType)
+        await this.$store.dispatch('fetchQuote', this.$route.query.quoteType)
     },
-    methods: {
+    computed: {
         textColor() {
-            if (this.theme === 'dark') {
+            if (this.$route.query.theme === 'dark') {
                 return 'white'
             } else {
                 return 'black'
             }
         },
         bgColor() {
-            if (this.theme === 'dark') {
+            if (this.$route.query.theme === 'dark') {
                 return 'black'
             } else {
                 return 'white'
             }
         },
         textSize() {
-            switch (this.fontSize) {
+            switch (this.$route.query.fontSize) {
                 case 'text':
                     return 'base'
                 case 'heading-1':
