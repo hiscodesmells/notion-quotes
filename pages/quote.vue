@@ -1,9 +1,10 @@
 <template>
-    <div class="p-4 min-h-screen flex flex-col items-center justify-center">
-        <div>
-            <div :class="`text-${fontSize} text-${fontColor}`">{{ this.$store.state.quote }}</div>
-            <div :class="`pl-2 pt-2 text-${fontSize} text-${fontColor} font-bold`">- {{ this.$store.state.author }}</div>
+    <div :class="`p-4 min-h-screen flex flex-col items-center justify-center bg-${bgColor()}`">
+        <div v-if="this.$store.state.quote">
+            <div :class="`text-${textSize()} text-${textColor()}`">{{ this.$store.state.quote }}</div>
+            <div :class="`pl-2 pt-2 text-${textSize()} text-${textColor()} font-bold`">- {{ this.$store.state.author }}</div>
         </div>
+        <div v-else>Loading...</div>
     </div>
 </template>
 
@@ -11,26 +12,42 @@
 import Vue from "vue"
 
 export default Vue.extend({
-    async fetch() {
-        await this.$store.dispatch('fetchQuote')
+    data() {
+        return {
+            theme: this.$route.query.theme,
+            fontSize: this.$route.query.fontSize,
+            quoteType: this.$route.query.quoteType
+        }
     },
-    computed: {
-        fontSize() {
-            const fontSize = this.$route.query.fontSize
-            switch (fontSize) {
-                case 'Text':
-                    return 'base'
-                case 'Heading 1':
-                    return '4xl'
-                case 'Heading 2':
-                    return '2xl'
-                case 'Heading 3':
-                    return 'xl'
+    async fetch() {
+        await this.$store.dispatch('fetchQuote', this.quoteType)
+    },
+    methods: {
+        textColor() {
+            if (this.theme === 'dark') {
+                return 'white'
+            } else {
+                return 'black'
             }
         },
-        fontColor() {
-            const fontColor = this.$route.query.fontColor
-            
+        bgColor() {
+            if (this.theme === 'dark') {
+                return 'black'
+            } else {
+                return 'white'
+            }
+        },
+        textSize() {
+            switch (this.fontSize) {
+                case 'text':
+                    return 'base'
+                case 'heading-1':
+                    return '4xl'
+                case 'heading-2':
+                    return '2xl'
+                case 'heading-3':
+                    return 'xl'
+            }
         }
     }
 })
