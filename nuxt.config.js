@@ -19,7 +19,7 @@ export default {
   },
 
   env: {
-    baseUrl: process.env.VERCEL_URL || 'http://localhost:3000'
+    baseUrl: process.env.URL || 'http://localhost:3000'
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
