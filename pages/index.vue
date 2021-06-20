@@ -15,17 +15,18 @@
       <!-- Hero Text -->
       <div class="w-full md:w-2/5 text-center">
         <!-- Heading -->
-        <p class="text-4xl font-bold">Get daily notion quotes</p>
+        <p class="text-4xl font-bold">Notion Quotes Widget</p>
 
         <!-- Subheading -->
-        <p class="mt-2 mb-4">Free notion quote widget for your Notion pages</p>
+        <p class="mt-2 mb-4">Get a new quote everytime you open Notion</p>
 
         <!-- Get started button -->
         <button class="px-4 py-3 rounded bg-black text-white" @click="scrollToElement('preview-section')">Get Started ↓</button>
       </div>
 
       <!-- Hero Image -->
-      <img class="w-3/5 h-96 border-2 border-black hidden md:block" src="" alt="Hero Image" />
+      <nuxt-img class="w-3/5 border-2 border-black hidden md:block" src="/hero-image.jpg" alt="Hero Image" />
+      
     </div>
 
     <!-- Spacer -->
