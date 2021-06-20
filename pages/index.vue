@@ -1,6 +1,6 @@
 <template>
   <!-- App -->
-  <div class="mb-8">
+  <div class="mb-8 text-black bg-white">
     <!-- Navbar -->
     <div class="px-4 h-16 flex flex-row items-center justify-between">
       <!-- Logo -->
@@ -79,7 +79,7 @@
         <div class="h-8"></div>
 
         <!-- Copy Link button -->
-        <button class="w-2/5 px-3 py-2 bg-black text-white rounded" @click="copyLink">Copy Link</button>
+        <button class="w-2/5 px-4 py-3 bg-black text-white rounded" @click="copyLink">Copy Link</button>
 
       </div>
     </div>
@@ -126,7 +126,7 @@ export default Vue.extend({
         'Inspirational',
         'Famous Quotes'
       ],
-      quoteTypeSelected: 'Wisdom'
+      quoteTypeSelected: 'Random'
     }
   },
   methods: {
