@@ -11,9 +11,9 @@
     </div>
 
     <!-- Hero Section -->
-    <div class="px-4 mt-4 flex flex-row items-center">
+    <div class="px-4 mt-4 h-96 md:h-full flex flex-row items-center">
       <!-- Hero Text -->
-      <div class="w-2/5 text-center">
+      <div class="w-full md:w-2/5 text-center">
         <!-- Heading -->
         <p class="text-4xl font-bold">Get daily notion quotes</p>
 
@@ -25,25 +25,25 @@
       </div>
 
       <!-- Hero Image -->
-      <img class="w-3/5 h-96 border-2 border-black" src="" alt="Hero Image" />
+      <img class="w-3/5 h-96 border-2 border-black hidden md:block" src="" alt="Hero Image" />
     </div>
 
     <!-- Spacer -->
-    <div class="h-24"></div>
+    <div class="h-8 md:h-24"></div>
 
     <!-- Preview Section -->
     <div id="preview-section" class="pt-4 pb-8 text-3xl text-center font-bold">Preview</div>
 
-    <div class="px-4 flex flex-row items-center justify-center">
+    <div class="px-4 flex flex-col md:flex-row items-center justify-center">
       <!-- Preview Frame -->
       <iframe
         :src="`${getRelativeQuoteUrl()}`"
         frameborder="0"
-        class="w-3/5 h-96 border-2 border-black"
+        class="w-full md:w-3/5 h-96 border-2 border-black"
       ></iframe>
 
       <!-- Config section -->
-      <div class="w-2/5 flex flex-col justify-around items-center">
+      <div class="py-4 w-full md:w-2/5 flex flex-col justify-around items-center">
 
         <!-- Theme settings -->
         <div class="">
@@ -79,7 +79,7 @@
         <div class="h-8"></div>
 
         <!-- Copy Link button -->
-        <button class="w-2/5 px-4 py-3 bg-black text-white rounded" @click="copyLink">Copy Link</button>
+        <button class="w-3/5 md:w-2/5 px-4 py-3 bg-black text-white rounded" @click="copyLink">Copy Link</button>
 
       </div>
     </div>
