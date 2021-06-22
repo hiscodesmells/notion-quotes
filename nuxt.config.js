@@ -53,21 +53,5 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  },
-
-  tailwindCss: {
-    purge: {
-      safelist: [
-        'text-xl',
-        'text-2xl',
-        'text-4xl'
-      ]
-    },
-    theme: {
-      colors: {
-          white: '#ffffff',
-          black: '#2f3437'
-        }
-    }
   }
 }
