@@ -18,7 +18,7 @@
         <p class="text-4xl font-bold">Notion Quotes Widget</p>
 
         <!-- Subheading -->
-        <p class="mt-2 mb-4">Get a new quote everytime you open Notion</p>
+        <p class="mt-2 mb-4">Get a new quote every time you open Notion</p>
 
         <!-- Get started button -->
         <button class="px-4 py-3 rounded bg-black text-white" @click="scrollToElement('preview-section')">Get Started ↓</button>
