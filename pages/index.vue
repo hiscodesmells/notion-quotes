@@ -104,6 +104,8 @@
 <script lang="ts">
 import Vue from "vue";
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 export default Vue.extend({
   data() {
     return {
